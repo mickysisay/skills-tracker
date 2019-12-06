@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>My skills</title>
+</head>
+<body>
+
+<div>
+    <p th:text="'Hi '+${usernames == '' ? 'Stranger' : usernames }+' your favorite languages are'"></p>
+    <ol >
+        <li th:each="name:${names}" th:text="${name}"></li>
+    </ol>
+</div>
+</body>
+</html>

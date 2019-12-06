@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Skill form</title>
+</head>
+<body>
+   <form method = "POST" action="/info">
+       <label>Your name: <input name="usernames" /></label>
+       <hr>
+       <div th:each = "num: ${numbers}">
+       <p th:text="'my'+${num}+'favorite language to learn is'"></p>
+       <select name="names" >
+
+           <option th:each="language:${languages}" th:value="${language}" th:text="${language}" ></option>
+       </select>
+       </div>
+       <hr>
+       <button>Submit</button>
+   </form>
+      <hr>
+  <form method="POST">
+      <label> or Add a new language: <input name="newlanguage" /></label>
+      <button>Add language</button>
+  </form>
+</body>
+</html>
